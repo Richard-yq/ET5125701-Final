@@ -1,0 +1,117 @@
+Receiver is ready
+  1=>Packet   1 sended at t = 1731652976.01947 |  Packet duration = 0.00000 ms
+  2=>Packet   2 sended at t = 1731652976.11963 |  Packet duration = 99.66278 ms
+  3=>Packet   3 sended at t = 1731652976.21977 |  Packet duration = 99.82181 ms
+  4=>Packet   4 sended at t = 1731652976.31989 |  Packet duration = 100.38090 ms
+  5=>Packet   5 sended at t = 1731652976.41999 |  Packet duration = 100.02160 ms
+  6=>Packet   6 sended at t = 1731652976.52013 |  Packet duration = 100.31414 ms
+  7=>Packet   7 sended at t = 1731652976.62026 |  Packet duration = 100.14105 ms
+  8=>Packet   8 sended at t = 1731652976.72042 |  Packet duration = 100.09360 ms
+  9=>Packet   9 sended at t = 1731652976.82054 |  Packet duration = 100.17753 ms
+ 10=>Packet  10 sended at t = 1731652976.92064 |  Packet duration = 99.72835 ms
+ 11=>Packet   1 sended at t = 1731652977.02078 |  Packet duration = 100.54398 ms
+ 12=>Packet   2 sended at t = 1731652977.12092 |  Packet duration = 100.12507 ms
+ 13=>Packet   3 sended at t = 1731652977.22103 |  Packet duration = 99.81823 ms
+ 14=>Packet   4 sended at t = 1731652977.32114 |  Packet duration = 100.33846 ms
+ 15=>Packet   5 sended at t = 1731652977.42123 |  Packet duration = 100.07668 ms
+ 16=>Packet   6 sended at t = 1731652977.52132 |  Packet duration = 100.00038 ms
+ 17=>Packet   7 sended at t = 1731652977.62141 |  Packet duration = 100.23618 ms
+ 18=>Packet   8 sended at t = 1731652977.72152 |  Packet duration = 100.04568 ms
+ 19=>Packet   9 sended at t = 1731652977.82163 |  Packet duration = 100.09861 ms
+ 20=>Packet  10 sended at t = 1731652977.92173 |  Packet duration = 100.18134 ms
+ 21=>Packet   1 sended at t = 1731652978.02187 |  Packet duration = 100.02613 ms
+ 22=>Packet   2 sended at t = 1731652978.12207 |  Packet duration = 99.80440 ms
+ 23=>Packet   3 sended at t = 1731652978.22219 |  Packet duration = 100.33154 ms
+ 24=>Packet   4 sended at t = 1731652978.32229 |  Packet duration = 100.29078 ms
+ 25=>Packet   5 sended at t = 1731652978.cket   1 sended at t = 1731652984.02771
+Packet   2 sended at t = 1731652984.12780
+Packet   3 sended at t = 1731652984.22788
+Packet   4 sended at t = 1731652984.32797
+Packet   5 sended at t = 1731652984.42805
+Packet   6 sended at t = 1731652984.52814
+Packet   7 sended at t = 1731652984.62822
+Packet   8 sended at t = 1731652984.72834
+Packet   9 sended at t = 1731652984.82844
+Packet  10 sended at t = 1731652984.92854
+Packet   1 sended at t = 1731652985.02865
+Packet   2 sended at t = 1731652985.12874
+Packet   3 sended at t = 1731652985.22883
+Packet   4 sended at t = 1731652985.32893
+Packet   5 sended at t = 1731652985.42905
+Packet   6 sended at t = 1731652985.52915
+Packet   7 sended at 42239 |  Packet duration = 100.07882 ms
+ 26=>Packet   6 sended at t = 1731652978.52247 |  Packet duration = 99.90120 ms
+ 27=>Packet   7 sended at t = 1731652978.62256 |  Packet duration = 100.17419 ms
+ 28=>Packet   8 sended at t = 1731652978.72265 |  Packet duration = 100.19183 ms
+ 29=>Packet   9 sended at t = 1731652978.82275 |  Packet duration = 100.17085 ms
+ 30=>Packet  10 sended at t = 1731652978.92286 |  Packet duration = 100.04377 ms
+ 31=>Packet   1 sended at t = 1731652979.02296 |  Packet duration = 100.11196 ms
+ 32=>Packet   2 sended at t = 1731652979.12305 |  Packet duration = 99.88356 ms
+ 33=>Packet   3 sended at t = 1731652979.22313 |  Packet duration = 100.25263 ms
+ 34=>Packet   4 sended at t = 1731652979.32321 |  Packet duration = 100.05760 ms
+ 35=>Packet   5 sended at t = 1731652979.42328 |  Packet duration = 100.19588 ms
+ 36=>Packet   6 sended at t = 1731652979.52336 |  Packet duration = 99.97821 ms
+ 37=>Packet   7 sended at t = 1731652979.62344 |  Packet duration = 100.14534 ms
+ 38=>Packet   8 sended at t = 1731652979.72353 |  Packet duration = 100.04973 ms
+ 39=>Packet   9 sended at t = 1731652979.82362 |  Packet duration = 100.10815 ms
+ 40=>Packet  10 sended at t = 1731652979.92371 |  Packet duration = 100.10791 ms
+ 41=>Packet   1 sended at t = 1731652980.02380 |  Packet duration = 99.94173 ms
+ 42=>Packet   2 sended at t = 1731652980.12390 |  Packet duration = 99.89238 ms
+ 43=>Packet   3 sended at t = 1731652980.22403 |  Packet duration = 100.44622 ms
+ 44=>Packet   4 sended at t = 1731652980.32415 |  Packet duration = 99.81322 ms
+ 45=>Packet   5 sended at t = 1731652980.42424 |  Packet duration = 100.05069 ms
+ 46=>Packet   6 sended at t = 1731652980.52435 |  Packet duration = 100.08955 ms
+ 47=>Packet   7 sended at t = 1731652980.62446 |  Packet duration = 100.13342 ms
+ 48=>Packet   8 sended at t = 1731652980.72456 |  Packet duration = 100.03161 ms
+ 49=>Packet   9 sended at t = 1731652980.82466 |  Packet duration = 100.17276 ms
+ 50=>Packet  10 sended at t = 1731652980.92475 |  Packet duration = 100.10552 ms
+ 51=>Packet   1 sended at t = 1731652981.02485 |  Packet duration = 100.13461 ms
+ 52=>Packet   2 sended at t = 1731652981.12493 |  Packet duration = 100.12245 ms
+ 53=>Packet   3 sended at t = 1731652981.22500 |  Packet duration = 99.90191 ms
+ 54=>Packet   4 sended at t = 1731652981.32508 |  Packet duration = 100.18802 ms
+ 55=>Packet   5 sended at t = 1731652981.42516 |  Packet duration = 100.12841 ms
+ 56=>Packet   6 sended at t = 1731652981.52524 |  Packet duration = 100.03996 ms
+ 57=>Packet   7 sended at t = 1731652981.62532 |  Packet duration = 100.04735 ms
+ 58=>Packet   8 sended at t = 1731652981.72541 |  Packet duration = 100.04759 ms
+ 59=>Packet   9 sended at t = 1731652981.82552 |  Packet duration = 100.18349 ms
+ 60=>Packet  10 sended at t = 1731652981.92565 |  Packet duration = 100.08812 ms
+ 61=>Packet   1 sended at t = 1731652982.02577 |  Packet duration = 100.23117 ms
+ 62=>Packet   2 sended at t = 1731652982.12586 |  Packet duration = 100.02255 ms
+ 63=>Packet   3 sended at t = 1731652982.22593 |  Packet duration = 100.10576 ms
+ 64=>Packet   4 sended at t = 1731652982.32602 |  Packet duration = 100.15106 ms
+ 65=>Packet   5 sended at t = 1731652982.42610 |  Packet duration = 100.33083 ms
+ 66=>Packet   6 sended at t = 1731652982.52618 |  Packet duration = 99.83659 ms
+ 67=>Packet   7 sended at t = 1731652982.62626 |  Packet duration = 100.36516 ms
+ 68=>Packet   8 sended at t = 1731652982.72637 |  Packet duration = 99.86281 ms
+ 69=>Packet   9 sended at t = 1731652982.82649 |  Packet duration = 100.16346 ms
+ 70=>Packet  10 sended at t = 1731652982.92663 |  Packet duration = 100.42334 ms
+ 71=>Packet   1 sended at t = 1731652983.02675 |  Packet duration = 99.77984 ms
+ 72=>Packet   2 sended at t = 1731652983.12684 |  Packet duration = 99.86854 ms
+ 73=>Packet   3 sended at t = 1731652983.22692 |  Packet duration = 100.35205 ms
+ 74=>Packet   4 sended at t = 1731652983.32702 |  Packet duration = 100.11315 ms
+ 75=>Packet   5 sended at t = 1731652983.42711 |  Packet duration = 100.21710 ms
+ 76=>Packet   6 sended at t = 1731652983.52720 |  Packet duration = 99.78890 ms
+ 77=>Packet   7 sended at t = 1731652983.62729 |  Packet duration = 100.28291 ms
+ 78=>Packet   8 sended at t = 1731652983.72740 |  Packet duration = 99.92552 ms
+ 79=>Packet   9 sended at t = 1731652983.82750 |  Packet duration = 100.05307 ms
+ 80=>Packet  10 sended at t = 1731652983.92761 |  Packet duration = 100.08788 ms
+ 81=>Packet   1 sended at t = 1731652984.02771 |  Packet duration = 100.18897 ms
+ 82=>Packet   2 sended at t = 1731652984.12780 |  Packet duration = 100.03519 ms
+ 83=>Packet   3 sended at t = 1731652984.22788 |  Packet duration = 100.17157 ms
+ 84=>Packet   4 sended at t = 1731652984.32797 |  Packet duration = 100.44193 ms
+ 85=>Packet   5 sended at t = 1731652984.42805 |  Packet duration = 99.59674 ms
+ 86=>Packet   6 sended at t = 1731652984.52814 |  Packet duration = 100.06833 ms
+ 87=>Packet   7 sended at t = 1731652984.62822 |  Packet duration = 100.14272 ms
+ 88=>Packet   8 sended at t = 1731652984.72834 |  Packet duration = 100.17872 ms
+ 89=>Packet   9 sended at t = 1731652984.82844 |  Packet duration = 100.05713 ms
+ 90=>Packet  10 sended at t = 1731652984.92854 |  Packet duration = 100.31295 ms
+ 91=>Packet   1 sended at t = 1731652985.02865 |  Packet duration = 99.88880 ms
+ 92=>Packet   2 sended at t = 1731652985.12874 |  Packet duration = 100.36969 ms
+ 93=>Packet   3 sended at t = 1731652985.22883 |  Packet duration = 100.13461 ms
+ 94=>Packet   4 sended at t = 1731652985.32893 |  Packet duration = 99.76697 ms
+ 95=>Packet   5 sended at t = 1731652985.42905 |  Packet duration = 100.21830 ms
+ 96=>Packet   6 sended at t = 1731652985.52915 |  Packet duration = 100.03352 ms
+ 97=>Packet   7 sended at t = 1731652985.62925 |  Packet duration = 100.23832 ms
+ 98=>Packet   8 sended at t = 1731652985.72938 |  Packet duration = 100.01469 ms
+ 99=>Packet   9 sended at t = 1731652985.82951 |  Packet duration = 100.32177 ms
+100=>Packet  10 sended at t = 1731652985.92964 |  Packet duration = 99.88403 ms
