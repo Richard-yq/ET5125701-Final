@@ -12,7 +12,7 @@ count = 0
 c = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 c.bind((proxy_ip, port))
 
-N_time = 100 # Maximum number of packets
+N_time = 1000 # Maximum number of packets
 
 while True:
     recv_data, client_addr = c.recvfrom(65535)
