@@ -4,7 +4,7 @@ import time
 import threading
 
 host = '192.168.88.250' # Client IP
-proxy_ip = '192.168.88.24' # Proxy PI eth3
+proxy_ip = '192.168.88.15' # Proxy PI eth3
 port1 = 5406 # Proxy port
 port2 = 5408
 path1_client_port = 5405 # path1 Client port
