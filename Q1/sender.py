@@ -6,7 +6,7 @@ port = 5406
 
 oSocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
-for _ in range(1, 11):
+for _ in range(1, 101):
     for i in range(1, 11):
         message = "Packet " + str(format(i, '3d')) + " sended at t = " + str(format(time.time(), '.5f'))
         
