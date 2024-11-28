@@ -3,6 +3,7 @@ import time
 import threading
 import queue
 import zlib
+import logging
 
 Proxy_IP = '192.168.88.15'
 port1 = 5406
@@ -36,13 +37,13 @@ class PacketSender(threading.Thread):
                 if N_ack == Number_of_group:  
                     break
                 message = "Group " + str(i) + " {" + ",".join([f"Packet {j}" for j in range(initPacket, initPacket+batch_size)]) + "}"
+                logging.debug(message)
                 compressed_data = zlib.compress(message.encode('utf-8')) # Use zlib process compress data
                 print(f"Send message to port {self.port} => {str(i)}")
                 
                 self.oSocket.sendto(compressed_data, (self.host, self.port))
                 if Number_of_group - 5 >= i:
                     message_queue.put((i))
-
                 # ack = message_queue.get(timeout=0.0001)
                 # print(f"ACK Packet {ack}")
                 # message_queue.put((ack))
@@ -80,6 +81,8 @@ def main():
     oReceive = UDPReceiver(host, port3)
     oReceive.start()
     choose = input("Enter 1(port = 5406), 2(port = 5408), 3(port = 5406 and 5408) to start sending packets: ")
+    # Set LOG level as DEBUG to see the message
+    logging.basicConfig(level=logging.INFO)
     if choose == '1':
         oSender = PacketSender(Proxy_IP, port1)
         oSender.start()
