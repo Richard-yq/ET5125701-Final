@@ -11,7 +11,6 @@ port2 = 5407
 sender_IP = '192.168.88.24'
 sender_port = 5409
 
-
 message_queue = queue.Queue()
 
 class UDPReceiver(threading.Thread):
@@ -47,8 +46,9 @@ class UDPReceiver(threading.Thread):
         self.socket.close()
 
 
-def Acknowledge(sender_IP, seder_port, message):
+def Acknowledge(sender_IP, sender_port, message):
     sender_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    print(f"Send {message} to {sender_IP}:{sender_port}")
     sender_socket.sendto(message.encode('utf-8'), (sender_IP, sender_port))
     sender_socket.close()
 
@@ -62,7 +62,7 @@ def main():
     try:
         while True:
             try:
-                port, message, recv_time, counter = message_queue.get(timeout=0.1)
+                port, message, recv_time, counter = message_queue.get(timeout=0.0001)
                 current_time = datetime.datetime.now().strftime('%H:%M:%S.%f')[:-3]
                 
                 recv_time = time.time()
@@ -70,15 +70,18 @@ def main():
                 tran_time = float(temp[6])
                 packet_delay = (recv_time - tran_time) * 1000
 
-                if port == port2:
-                    # print(f"\t \t \t \t \t \t \t \t \t \t[{current_time}] Port {port} - {str(format(counter, '3d'))}=> {message} => Latency = {str(format(packet_delay, '1.5f'))} ms")
-                    print(f"\t \t \t \t \t \t \t \t \t \t \t Port {port} - {str(format(counter, '3d'))}=> {message} => Latency = {str(format(packet_delay, '1.5f'))} ms")
-                else:
-                    # print(f"[{current_time}] Port {port} - {str(format(counter, '3d'))}=> {message} => Latency = {str(format(packet_delay, '1.5f'))} ms")
-                    print(f"Port {port} - {str(format(counter, '3d'))}=> {message} => Latency = {str(format(packet_delay, '1.5f'))} ms")
+                if counter == 1:
+                    Start_receiving_time = time.time()
+                Total_receiving_time = time.time() - Start_receiving_time
+                # print(f"\t \t \t \t \t \t \t \t \t \t[{current_time}] Port {port} - {str(format(counter, '3d'))}=> {message} => Latency = {str(format(packet_delay, '1.5f'))} ms")
+                print(f"Port {port} - {str(format(counter, '3d'))}=> {message} => Latency = {str(format(packet_delay, '1.5f'))} ms => Total Receiving Time = {str(format(Total_receiving_time, '1.2f'))} s")
+
+
+                Acknowledge(sender_IP, sender_port, f"Ack {temp[1]}")
+
                 message_queue.task_done()
-                Acknowledge(sender_IP, sender_port, f"Ack({temp[1]})")
             except queue.Empty:
+                # print("wait")
                 continue
             
     except KeyboardInterrupt:
