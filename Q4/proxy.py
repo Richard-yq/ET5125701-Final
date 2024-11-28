@@ -50,23 +50,18 @@ def proxy_second(target_port, port): # delays 500 ms the received packet with 5%
     c.bind((proxy_ip, port)) # c1 start
     while True:
         recv_data, client_addr = c.recvfrom(65535) # 65535: data lens (2^16)
-        message = recv_data.decode('UTF-8')
+        # message = recv_data.decode('UTF-8')
 
-        temp = message.split()
-        flag = int(temp[1]) # Sequence number
+        # temp = message.split()
+        # flag = int(temp[1]) # Sequence number
 
         # 0,0 <= pick <= 1,0
         pick = random.uniform(0,1)
         if pick <= 0.05:  # 5% delay
-            print("Packet queued for delay, sequence number = ", flag)
+            # print("Packet queued for delay, sequence number = ", flag)
             delay_queue.put((recv_data, target_port))  # Add to queue
         else:
             c.sendto(recv_data, (host, target_port))
-        
-        if flag == N_time:
-            break
-        else:
-            continue
 
 def delay_handler():  # Handles delayed packets without blocking
     while True:
