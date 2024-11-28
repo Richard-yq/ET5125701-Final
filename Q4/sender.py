@@ -24,11 +24,12 @@ class PacketSender(threading.Thread):
         
     def run(self):
         message_queue.put((0))
-        i = 1
+        i = 0
         while True:
             try:
                 N_ack = message_queue.get(timeout=0.0001)
                 print(f"Retrive ACK Packet {N_ack}")
+                i = N_ack + 1
                 if N_ack == Number_of_packets:  
                     break
                 message = "Packet " + str(format(i, '3d')) + " sended at t = " + str(format(time.time(), '.5f'))
@@ -41,7 +42,7 @@ class PacketSender(threading.Thread):
                 # ack = message_queue.get(timeout=0.0001)
                 # print(f"ACK Packet {ack}")
                 # message_queue.put((ack))
-                i = i + 1
+                
             except queue.Empty:
                 message = "Packet " + str(format(i, '3d')) + " sended at t = " + str(format(time.time(), '.5f'))
                 
