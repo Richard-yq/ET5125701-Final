@@ -2,6 +2,7 @@ import socket
 import time
 import threading
 import queue
+import zlib
 
 Proxy_IP = '192.168.88.15'
 port1 = 5406
@@ -11,7 +12,8 @@ port3 = 5409
 host = '192.168.88.24'
 
 
-Number_of_packets = 20
+Number_of_group = 20
+batch_size = 5000  # Numer of packets per time to send
 message_queue = queue.Queue()
 
 
@@ -24,31 +26,31 @@ class PacketSender(threading.Thread):
         
     def run(self):
         message_queue.put((0))
-        i = 0
+        initPacket = 1 - batch_size
         while True:
             try:
                 N_ack = message_queue.get(timeout=0.0001)
                 print(f"Retrive ACK Packet {N_ack}")
                 i = N_ack + 1
-                if N_ack == Number_of_packets:  
+                initPacket = initPacket + batch_size
+                if N_ack == Number_of_group:  
                     break
-                message = "Packet " + str(format(i, '3d')) + " sended at t = " + str(format(time.time(), '.5f'))
-                print(f"Send message to port {self.port} => {message}")
+                message = "Group " + str(i) + " {" + ",".join([f"Packet {j}" for j in range(initPacket, initPacket+batch_size)]) + "}"
+                compressed_data = zlib.compress(message.encode('utf-8')) # Use zlib process compress data
+                print(f"Send message to port {self.port} => {str(i)}")
                 
-                self.oSocket.sendto(message.encode('utf-8'), (self.host, self.port))
-                if Number_of_packets - 5 >= i:
+                self.oSocket.sendto(compressed_data, (self.host, self.port))
+                if Number_of_group - 5 >= i:
                     message_queue.put((i))
 
                 # ack = message_queue.get(timeout=0.0001)
                 # print(f"ACK Packet {ack}")
                 # message_queue.put((ack))
                 
-            except queue.Empty:
-                message = "Packet " + str(format(i, '3d')) + " sended at t = " + str(format(time.time(), '.5f'))
+            except queue.Empty:                
+                print(f"Send message to port {self.port} => {str(i)}")
                 
-                print(f"Send message to port {self.port} => {message}")
-                
-                self.oSocket.sendto(message.encode('utf-8'), (self.host, self.port))
+                self.oSocket.sendto(compressed_data, (self.host, self.port))
 
             time.sleep(0.1)
 
@@ -70,7 +72,7 @@ class UDPReceiver(threading.Thread):
             temp = message.split()
             Npacket = int(temp[1])
             print(f"Receive Acknowledged Packet {Npacket}")
-            if Number_of_packets - 5 < Npacket:
+            if Number_of_group - 5 < Npacket:
                 message_queue.put((Npacket))
         
 
