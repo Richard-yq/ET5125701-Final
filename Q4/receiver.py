@@ -6,6 +6,7 @@ import datetime
 import zlib
 import re
 # import sys
+import os
 
 host = '192.168.88.250'
 port1 = 5405
@@ -56,7 +57,6 @@ def Acknowledge(sender_IP, sender_port, message):
     sender_socket.sendto(message.encode('utf-8'), (sender_IP, sender_port))
     sender_socket.close()
 
-
 def display_progress_bar(received_packets, max_packets):
     progress = len(received_packets) / max_packets  # 計算進度百分比
     bar_length = 40  # 進度條的長度
@@ -67,7 +67,23 @@ def display_progress_bar(received_packets, max_packets):
     print(f"\r[{bar}] {percent:.2f}% ({len(received_packets * 5000)}/{max_packets * 5000} packets)")
     # sys.stdout.flush()
 
+def display_received_packet(received_packets, max_packets):
+    title = ""
+    outcome = ""
+    
+    for j in range(1, max_packets + 1):
+        title += f"{j:>3} "
+        if j in received_packets:
+            outcome += "  ■ "
+        else:
+            outcome += "    "
+
+    print(title)
+    print(outcome)
+
 def main():
+    # display_received_packet([1,2,6,8], Max_of_packets)
+    # display_progress_bar([1,2,6,8], Max_of_packets)
     receiver1 = UDPReceiver(host, port1)
     receiver2 = UDPReceiver(host, port2)
     
@@ -79,12 +95,15 @@ def main():
     try:
         while True:
             try:
-                port, comp_message, recv_time, counter = message_queue.get(timeout=0.0001)
+                port, comp_message, recv_time, counter = message_queue.get()
+                os.system('clear')
                 current_time = datetime.datetime.now().strftime('%H:%M:%S.%f')[:-3]
                 
                 # Calculate the total time of receiving
                 if counter == 1:
                     Start_receiving_time = recv_time
+                    received_packets = []
+                    print(f"Start Receiving Time = {str(format(Start_receiving_time, '1.2f'))} s")
                 Total_receiving_time = recv_time - Start_receiving_time
 
                 message = zlib.decompress(comp_message)
@@ -95,7 +114,6 @@ def main():
                 print(f"Port {port} - {str(format(counter, '3d'))} => Total Receiving Time = {str(format(Total_receiving_time, '1.2f'))} s")
                 
                 # Retrieve the data from the message
-
                 match = re.match(r"Group (\d+) \{(.*?)\}", packetN)
                 if match:
                     group = match.group(1)
@@ -110,8 +128,10 @@ def main():
                 else:
                     print("Message format is incorrect")
 
-                print(f"Progress of Received Group: {received_packets}")
+                # print(f"Progress of Received Group: {received_packets}")
                 display_progress_bar(received_packets, Max_of_packets)
+                display_received_packet(received_packets, Max_of_packets)
+
                 
 
                 Acknowledge(sender_IP, sender_port, f"Ack {group}")
