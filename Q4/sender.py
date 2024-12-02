@@ -12,9 +12,8 @@ port3 = 5409
 
 host = '192.168.88.24'
 
-
 Number_of_group = 20
-batch_size = 5000  # Numer of packets per time to send
+batch_size = 5000  # Number of packets per time to send
 message_queue = queue.Queue()
 
 
