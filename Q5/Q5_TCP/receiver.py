@@ -3,7 +3,7 @@ import time
 import threading
 # 設定目標 IP 和 port  
 host = '192.168.88.24'
-port = 0
+port = 5500
 
 server  = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind((host, port))
