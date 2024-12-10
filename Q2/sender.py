@@ -14,7 +14,7 @@ class PacketSender(threading.Thread):
         self.oSocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         
     def run(self):
-        for _ in range(1, 101):
+        for _ in range(1, 2):
             for i in range(1, 11):
                 message = "Packet " + str(format(i, '3d')) + " sended at t = " + str(format(time.time(), '.5f'))
                 

@@ -1,0 +1,21 @@
+Enter 1(port = 5406), 2(port = 5408), 3(port = 5406 and 5408) to start sending packets: 3
+Send message to port 5406 => Packet   1 sended at t = 1733799871.23659
+Send message to port 5408 => Packet   1 sended at t = 1733799871.23677
+Send message to port 5406 => Packet   2 sended at t = 1733799871.33688
+Send message to port 5408 => Packet   2 sended at t = 1733799871.33709
+Send message to port 5406 => Packet   3 sended at t = 1733799871.43704
+Send message to port 5408 => Packet   3 sended at t = 1733799871.43722
+Send message to port 5406 => Packet   4 sended at t = 1733799871.53720
+Send message to port 5408 => Packet   4 sended at t = 1733799871.53736
+Send message to port 5406 => Packet   5 sended at t = 1733799871.63734
+Send message to port 5408 => Packet   5 sended at t = 1733799871.63748
+Send message to port 5406 => Packet   6 sended at t = 1733799871.73746
+Send message to port 5408 => Packet   6 sended at t = 1733799871.73760
+Send message to port 5406 => Packet   7 sended at t = 1733799871.83759
+Send message to port 5408 => Packet   7 sended at t = 1733799871.83773
+Send message to port 5406 => Packet   8 sended at t = 1733799871.93772
+Send message to port 5408 => Packet   8 sended at t = 1733799871.93785
+Send message to port 5406 => Packet   9 sended at t = 1733799872.03785
+Send message to port 5408 => Packet   9 sended at t = 1733799872.03797
+Send message to port 5406 => Packet  10 sended at t = 1733799872.13797
+Send message to port 5408 => Packet  10 sended at t = 1733799872.13810
