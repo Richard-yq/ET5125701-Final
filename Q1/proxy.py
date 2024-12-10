@@ -5,7 +5,7 @@ import time
 host = '192.168.88.250' # Client IP
 proxy_ip = '192.168.88.15' # Proxy PI eth3
 port = 5406 # Proxy port
-target_prot = 5407 # Client port
+target_prot = 5405 # Client port
 
 
 count = 0
