@@ -3,14 +3,16 @@ from aioquic.asyncio import serve
 from aioquic.asyncio.protocol import QuicConnectionProtocol
 from aioquic.quic.configuration import QuicConfiguration
 import os
+import uvloop
 receiver_ip = '192.168.88.250'
 receiver_port = 5500
-
+import ssl
 recv_time = 0
 counter = 1
 
 class MyQuicProtocol(QuicConnectionProtocol):
-    async def stream_handler(self, stream_id: int, stream_data: asyncio.StreamReader):
+    # 在 stream_handler 中處理來自 Sender 的資料流，計算封包延遲並回傳 ACK。
+    async def stream_handler(self, stream_id: int, stream_data: asyncio.StreamReader): 
         global recv_time, counter
 
         data = await stream_data.read()
@@ -37,13 +39,21 @@ class MyQuicProtocol(QuicConnectionProtocol):
         recv_time = trans_time_next
         counter += 1
 
-async def main():
+async def run_server():
     # QUIC 配置
     configuration = QuicConfiguration(is_client=False)
     configuration.load_cert_chain(certfile="//home//rapi//ET5125701-Final//Q5//Q5_QUIC//cert.pem", keyfile="//home//rapi//ET5125701-Final//Q5//Q5_QUIC//key.pem")
 
-    # 啟動 QUIC 伺服器
-    await serve(receiver_ip, receiver_port, configuration=configuration, create_protocol=MyQuicProtocol)
+    # 使用 serve() 啟動 QUIC 伺服器
+    # try :
+    await serve(receiver_ip, receiver_port, configuration=configuration, create_protocol=MyQuicProtocol) 
+    print('伺服器已啟動，等待連線...')
+    await asyncio.Future()
+    # except:
+    #     print("伺服器已關閉。")
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    try:
+        asyncio.run(run_server(), debug = True)
+    except KeyboardInterrupt:
+        print("伺服器已關閉。")
