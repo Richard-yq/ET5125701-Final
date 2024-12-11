@@ -43,6 +43,8 @@ class UDPReceiver(threading.Thread):
         self.socket.close()
 
 def main():
+    trans_time_pre = [0,0]
+    counter = 1
     receiver1 = UDPReceiver(host, port1)
     receiver2 = UDPReceiver(host, port2)
     
@@ -54,7 +56,22 @@ def main():
             try:
                 port, message, recv_time, counter = message_queue.get(timeout=0.1)
                 current_time = datetime.datetime.now().strftime('%H:%M:%S.%f')[:-3]
-                print(f"[{current_time}] Port {port} - {str(format(counter, '3d'))}=> {message}")
+
+                if port == port2:
+                    Pocket_duration = (recv_time - trans_time_pre[1]) * 1000 
+                    if trans_time_pre[1] == 0:
+                        Pocket_duration = 0
+                    # print(f"\t \t \t \t \t \t \t \t \t \t[{current_time}] Port {port} - {str(format(counter, '3d'))}=> {message} => Latency = {str(format(packet_delay, '1.5f'))} ms")
+                    print(f"\t \t \t \t \t \t \t \t \t \t \t Port {port}: {str(format(counter, '2d'))}=> {message} | Duration = {str(format(Pocket_duration, '1.5f'))} ms")
+                    trans_time_pre[1] = recv_time
+                else:
+                    Pocket_duration = (recv_time - trans_time_pre[0]) * 1000 
+                    if trans_time_pre[0] == 0:
+                        Pocket_duration = 0
+                    # print(f"[{current_time}] Port {port} - {str(format(counter, '3d'))}=> {message} => Latency = {str(format(packet_delay, '1.5f'))} ms")
+                    print(f"Port {port}: {str(format(counter, '2d'))}=> {message} | Duration = {str(format(Pocket_duration, '1.5f'))} ms")
+                    trans_time_pre[0] = recv_time
+                    
                 message_queue.task_done()
             except queue.Empty:
                 continue

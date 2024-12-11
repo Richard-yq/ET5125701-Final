@@ -3,7 +3,7 @@ import time
 
 # 設定目標 IP 和 port  
 host = '192.168.88.250'
-port = 5407
+port = 5405
 
 oSocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 oSocket.bind((host, port))

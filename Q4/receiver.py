@@ -121,7 +121,7 @@ def main():
                     packets = packets[0].split(',')
                     if int(group) not in received_packets:
                         received_packets.append(int(group))
-                        received_packets.sort()
+                        # received_packets.sort()
                         print(f"Group: {group}")
                         print(f"Packets: {packets[0]} to {packets[len(packets) - 1]}")
                         # print(f"Progress of Received packets: {received_packets}")
@@ -131,6 +131,7 @@ def main():
                 # print(f"Progress of Received Group: {received_packets}")
                 display_progress_bar(received_packets, Max_of_packets)
                 display_received_packet(received_packets, Max_of_packets)
+                print(received_packets)
 
                 
 
