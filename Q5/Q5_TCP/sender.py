@@ -26,7 +26,7 @@ ssl_client.connect((receiver_ip, receiver_port))
 print("Connected to the receiver")
 
 for _ in range(1, 2):
-    for i in range(1, 20):
+    for i in range(1, 1000001):
         message = f"Packet {i:6d}\n"
         
         # print(message)
