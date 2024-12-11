@@ -1,0 +1,63 @@
+Started a UDP socket listening on port 5409
+Enter 1(port = 5406), 2(port = 5408), 3(port = 5406 and 5408) to start sending packets: 2
+Retrive ACK Packet 0
+Send message to port 5408 => 1
+Receive Acknowledged Packet 1
+Retrive ACK Packet 1
+Send message to port 5408 => 2
+Receive Acknowledged Packet 2
+Retrive ACK Packet 2
+Send message to port 5408 => 3
+Receive Acknowledged Packet 3
+Retrive ACK Packet 3
+Send message to port 5408 => 4
+Receive Acknowledged Packet 4
+Retrive ACK Packet 4
+Send message to port 5408 => 5
+Receive Acknowledged Packet 5
+Retrive ACK Packet 5
+Send message to port 5408 => 6
+Retrive ACK Packet 6
+Send message to port 5408 => 7
+Receive Acknowledged Packet 7
+Retrive ACK Packet 7
+Send message to port 5408 => 8
+Receive Acknowledged Packet 8
+Retrive ACK Packet 8
+Send message to port 5408 => 9
+Receive Acknowledged Packet 9
+Retrive ACK Packet 9
+Send message to port 5408 => 10
+Receive Acknowledged Packet 10
+Retrive ACK Packet 10
+Receive Acknowledged Packet 6
+Send message to port 5408 => 11
+Receive Acknowledged Packet 11
+Retrive ACK Packet 11
+Send message to port 5408 => 12
+Receive Acknowledged Packet 12
+Retrive ACK Packet 12
+Send message to port 5408 => 13
+Receive Acknowledged Packet 13
+Retrive ACK Packet 13
+Send message to port 5408 => 14
+Retrive ACK Packet 14
+Send message to port 5408 => 15
+Receive Acknowledged Packet 15
+Retrive ACK Packet 15
+Send message to port 5408 => 16
+Receive Acknowledged Packet 16
+Retrive ACK Packet 16
+Send message to port 5408 => 17
+Receive Acknowledged Packet 17
+Retrive ACK Packet 17
+Send message to port 5408 => 18
+Receive Acknowledged Packet 18
+Retrive ACK Packet 18
+Send message to port 5408 => 19
+Receive Acknowledged Packet 14
+Receive Acknowledged Packet 19
+Retrive ACK Packet 19
+Send message to port 5408 => 20
+Receive Acknowledged Packet 20
+Retrive ACK Packet 20
